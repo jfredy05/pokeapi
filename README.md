@@ -42,7 +42,7 @@ python manage.py runserver
 
 2. Una vez este corriendo el servicio web, ejecutamos el comando para guardar las diferentes cadenas de evolución.
 ```python
-python main.py
+python create_evolution_chain.py
 ```
 
 
