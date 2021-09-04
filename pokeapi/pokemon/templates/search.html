@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Search test Pokémon</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+	<form action="/search-pokemon/" method="get" accept-charset="utf-8">
+		<input type="text" name="name" placeholder="Search Pokémon">
+		<input type="submit" value="Search">
+	</form>
+
+	{% if message %}
+		<p class="message"> {{ message }} </p>
+	{% endif %}
+
+	{% if pokemon %}
+		<article class="card pokemon">
+			<div class="card-body">
+				<img src="{{ pokemon.image }}" alt="imagen de vitoko" class="card-body-img" width="120">
+				<h1 class="card-body-title"> {{ pokemon.name|safe }} </h1>
+				<span> <strong>Id: </strong> 26 </span>
+				<span> <strong>Height: </strong> {{ pokemon.height|safe }}</span>
+				<span> <strong>Weight: </strong> {{ pokemon.weight|safe }}</span>
+			</div>
+			<div class="card-footer">
+				{% for stat in pokemon.stats %}
+				<div class="card-footer-social">
+					<h3> {{ stat.base }}</h3>
+					<p> {{ stat.name|safe }} </p>
+				</div>
+				{% endfor %}
+			</div>
+		</article>
+	{% endif %}
+
+	{% if prevolutions %}
+	<section class="prevolutions">
+		<h3> Prevolutions </h3>
+		{% for pre in prevolutions %}
+			<article class="card">
+				<div class="card-body">
+					<img src="{{ pre.image }}" alt="imagen de vitoko" class="card-body-img" width="100">
+					<h1 class="card-body-title"> {{ pre.name|safe }} </h1>
+					<span> <strong>Id: </strong> 26 </span>
+					<span> <strong>Height: </strong> {{ pre.height|safe }}</span>
+					<span> <strong>Weight: </strong> {{ pre.weight|safe }}</span>
+				</div>
+			</article>
+		{% endfor %}
+	</section>
+	{% endif %}
+
+	{% if evolutions %}
+	<section class="evolutions">
+		<h3> Evolutions </h3>
+		{% for next in evolutions %}
+			<article class="card">
+				<div class="card-body">
+					<img src="{{ next.image }}" alt="imagen de vitoko" class="card-body-img" width="100">
+					<h1 class="card-body-title"> {{ next.name|safe }} </h1>
+					<span> <strong>Id: </strong> 26 </span>
+					<span> <strong>Height: </strong> {{ next.height|safe }}</span>
+					<span> <strong>Weight: </strong> {{ next.weight|safe }}</span>
+				</div>
+			</article>
+		{% endfor %}
+	</section>
+	{% endif %}
+</body>
+</html>

@@ -1,0 +1,63 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  margin: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 20px auto;
+  overflow: hidden;
+  padding: 10px;
+  width: 326px;
+}
+
+.pokemon {
+  width: 810px; 
+}
+
+.pokemon > div {
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+}
+
+.card-header {
+  display: block;
+  width: 100%;
+}
+
+.pokemon .card-body {
+  border-right: 1px solid rgba(153, 153, 153, 0.383);
+}
+
+.card-body-title {
+  margin: 10px;
+  font-size: 1.8rem;
+}
+
+.card-body-title span {
+  font-weight: 400;
+}
+
+.card-body-text {
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.card-footer-social {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 120px;
+}
+
+.card-footer-social p {
+  letter-spacing: 1px;
+}
